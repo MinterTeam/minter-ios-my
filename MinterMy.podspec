@@ -9,10 +9,10 @@ TODO: Add long description of the pod here.
   s.homepage         = 'https://github.com/MinterTeam'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'sidorov.panda' => 'ody344@gmail.com' }
-  s.source           = { :git => 'https://github.com/MinterTeam/MinterMy.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/MinterTeam/MinterMy-iOS.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'MinterMy/Classes/**/*'
-	s.dependency 'MinterCore'
+  s.dependency 'MinterCore'
 end
