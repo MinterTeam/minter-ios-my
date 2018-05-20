@@ -5,6 +5,7 @@ use_frameworks!
 
 target 'MinterMy_Example' do
   pod 'MinterMy', :path => '../'
+	pod 'MinterCore', :path => '../../MinterCore'
 
   target 'MinterMy_Tests' do
     inherit! :search_paths
