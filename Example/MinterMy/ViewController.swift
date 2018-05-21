@@ -7,13 +7,26 @@
 //
 
 import UIKit
+import MinterCore
+import MinterMy
 
 class ViewController: UIViewController {
+	
+	var manager: AuthManager?
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		let httpClient = APIClient.shared
+		
+		self.manager = AuthManager(httpClient: httpClient)
+		
+		manager?.isTaken(username: "ody344", completion: { [weak self] (respoonse, error) in
+			print(respoonse)
+			print(error)
+		})
+		
+	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -8,7 +8,7 @@
 import Foundation
 import MinterCore
 
-let MinterMyAPIBaseURL = "http://159.89.107.246:8841/api/v1/"
+let MinterMyAPIBaseURL = "https://my.beta.minter.network/api/v1/"
 
 
 enum MinterMyAPIURL {
@@ -32,7 +32,7 @@ enum MinterMyAPIURL {
 			return URL(string: MinterMyAPIBaseURL + "login")!
 			
 		case .username:
-			return URL(string: MinterMyAPIBaseURL + "username")!
+			return URL(string: MinterMyAPIBaseURL + "username/")!
 			
 		//Profile
 			
