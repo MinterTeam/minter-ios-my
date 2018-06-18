@@ -3,25 +3,28 @@
 //  MinterMy
 //
 //  Created by Alexey Sidorov on 02/05/2018.
+//  Copyright © 2018 Minter. All rights reserved.
 //
 
 import Foundation
 import MinterCore
 
-let MinterMyAPIBaseURL = "https://my.beta.minter.network/api/v1/"
+//92.53.87.98
+public let MinterMyAPIBaseURL = "https://my.beta.minter.network/api/v1/"
 
 
-enum MinterMyAPIURL {
+public enum MinterMyAPIURL {
 	
 	//
 	case register
 	case login
-	case username
+	case username(username: String)
 	//profile
 	case profileConfirm(id: Int)
 	case profile
+	case avatar(address: String)
 	
-	func url() -> URL {
+	public func url() -> URL {
 		switch self {
 			
 		//Auth
@@ -31,16 +34,18 @@ enum MinterMyAPIURL {
 		case .login:
 			return URL(string: MinterMyAPIBaseURL + "login")!
 			
-		case .username:
-			return URL(string: MinterMyAPIBaseURL + "username/")!
+		case .username(let username):
+			return URL(string: MinterMyAPIBaseURL + "username/\(username)")!
 			
 		//Profile
-			
 		case .profileConfirm(let id):
 			return URL(string: MinterMyAPIBaseURL + "profile/confirm/\(id)/")!
 			
 		case .profile:
 			return URL(string: MinterMyAPIBaseURL + "profile")!
+		
+		case .avatar(let address):
+			return URL(string: MinterMyAPIBaseURL + "avatar/by/address/" + address)!
 			
 		}
 	}
