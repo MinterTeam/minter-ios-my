@@ -16,15 +16,23 @@ enum MinterMyURL {
 	
 	case addressesEncrypted
 	case addressEncrypted(address: String)
+	case infoByAddresses
+	case addressByContact
 
 	func url() -> URL {
 		
 		switch self {
+		case .addressByContact:
+			return URL(string: MinterMyBaseURL + "info/address/by/contact")!
+			
 		case .addressesEncrypted:
 			return URL(string: MinterMyBaseURL + "addresses/encrypted")!
 		
 		case .addressEncrypted(let address):
 			return URL(string: MinterMyBaseURL + "addresses/" + address + "/encrypted")!
+			
+		case .infoByAddresses:
+			return URL(string: MinterMyBaseURL + "info/by/addresses")!
 		
 		}
 	}

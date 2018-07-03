@@ -45,7 +45,17 @@ public class AuthManager : BaseManager {
 		let url = MinterMyAPIURL.register.url()
 		
 		let mainAddress : [String : Any] = ["address" : "Mx" + account.address, "isMain" : true, "isServerSecured" : true, "encrypted" : encrypted ?? ""]
-		self.httpClient.postRequest(url, parameters: ["username" : username, "password" : password, "mainAddress" : mainAddress]) { (response, error) in
+		var params: [String : Any] = ["username" : username, "password" : password, "mainAddress" : mainAddress]
+		
+//		if phone != "" {
+//			params["phone"] = phone
+//		}
+		
+		if email != "" {
+			params["email"] = email
+		}
+		
+		self.httpClient.postRequest(url, parameters: params) { (response, error) in
 			
 			var res: Bool?
 			var err: AuthManagerRegisterError?

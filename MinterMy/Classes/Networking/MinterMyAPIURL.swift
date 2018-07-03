@@ -22,7 +22,9 @@ public enum MinterMyAPIURL {
 	//profile
 	case profileConfirm(id: Int)
 	case profile
-	case avatar(address: String)
+	case avatarAddress(address: String)
+	case avatarUserId(id: Int)
+	case profileAvatar
 	
 	public func url() -> URL {
 		switch self {
@@ -43,9 +45,15 @@ public enum MinterMyAPIURL {
 			
 		case .profile:
 			return URL(string: MinterMyAPIBaseURL + "profile")!
+			
+		case .profileAvatar:
+			return URL(string: MinterMyAPIBaseURL + "profile/avatar")!
 		
-		case .avatar(let address):
+		case .avatarAddress(let address):
 			return URL(string: MinterMyAPIBaseURL + "avatar/by/address/" + address)!
+			
+		case .avatarUserId(let id):
+			return URL(string: MinterMyAPIBaseURL + "avatar/by/user/" + String(id))!
 			
 		}
 	}
