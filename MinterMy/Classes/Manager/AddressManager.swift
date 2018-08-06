@@ -10,7 +10,7 @@ import MinterCore
 import ObjectMapper
 
 
-public class AddressManager : BaseManager {
+public class MyAddressManager : BaseManager {
 	
 	public func addresses(completion: (([Address]?, Error?) -> ())?) {
 		

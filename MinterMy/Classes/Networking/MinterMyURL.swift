@@ -29,7 +29,7 @@ enum MinterMyURL {
 			return URL(string: MinterMyBaseURL + "addresses/encrypted")!
 		
 		case .addressEncrypted(let address):
-			return URL(string: MinterMyBaseURL + "addresses/" + address + "/encrypted")!
+			return URL(string: MinterMyBaseURL + "addresses/" + address.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)! + "/encrypted")!
 			
 		case .infoByAddresses:
 			return URL(string: MinterMyBaseURL + "info/by/addresses")!

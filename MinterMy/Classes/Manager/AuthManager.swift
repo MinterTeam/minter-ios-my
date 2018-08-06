@@ -139,5 +139,30 @@ public class AuthManager : BaseManager {
 			
 		}
 	}
+	
+	public func changePassword(newPassword: String, encryptedMnemonics: [(id: Int, mnemonic: String)], completion: ((Bool?, Error?) -> ())?) {
+		
+		let url = MinterMyAPIURL.password.url()
+		
+		self.httpClient.postRequest(url, parameters: ["newPassword" : newPassword, "addressesEncryptedData" : encryptedMnemonics.map({ (val) -> [String : Any] in
+			return ["id" : val.id, "encrypted": val.mnemonic]
+		})]) { (response, error) in
+			
+			var res = false
+			var err: Error?
+			
+			defer {
+				completion?(res, err)
+			}
+			
+			guard error == nil else {
+				err = error
+				return
+			}
+			
+			res = true
+			
+		}
+	}
 
 }

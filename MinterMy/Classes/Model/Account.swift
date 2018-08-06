@@ -26,9 +26,12 @@ public struct Account {
 	
 	public var lastBalance: [String : Double] = [:]
 	
+	public var id: Int
+	
 	//MARK: -
 	
-	public init(encryptedBy: EncryptedBy, address: String, isMain: Bool = false) {
+	public init(id: Int, encryptedBy: EncryptedBy, address: String, isMain: Bool = false) {
+		self.id = id
 		self.encryptedBy = encryptedBy
 		self.address = address
 		self.isMain = isMain
@@ -37,6 +40,7 @@ public struct Account {
 	//MARK: -
 
 	public mutating func merge(with account: Account) {
+		self.id = account.id
 		self.encryptedBy = account.encryptedBy
 		self.address = account.address
 		self.isMain = account.isMain
@@ -47,7 +51,7 @@ public struct Account {
 extension Account : Equatable {
 	
 	public static func == (lhs: Account, rhs: Account) -> Bool {
-		return lhs.address == rhs.address && lhs.encryptedBy.rawValue == rhs.encryptedBy.rawValue && lhs.isMain == rhs.isMain
+		return lhs.id == rhs.id && lhs.address == rhs.address && lhs.encryptedBy.rawValue == rhs.encryptedBy.rawValue && lhs.isMain == rhs.isMain
 	}
 	
 }
