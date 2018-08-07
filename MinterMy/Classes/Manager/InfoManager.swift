@@ -9,13 +9,20 @@ import Foundation
 import MinterCore
 import ObjectMapper
 
-
+/// Info manager
 public class InfoManager : BaseManager {
 	
 	public enum InfoManagerError : Error {
 		case wrongParametes
 	}
 	
+	/**
+	Method retreives addresses info data from the MyMinter server
+	- SeeAlso: https://my.beta.minter.network/help/index.html
+	- Parameters:
+	- addresses: address to retreive info about
+	- completion: Method which will be called after request finishes
+	*/
 	public func info(by addresses: [String], completion: (([[String : Any]]?, Error?) -> ())?) {
 		
 		let url = MinterMyURL.infoByAddresses.url()
@@ -41,6 +48,14 @@ public class InfoManager : BaseManager {
 		}
 	}
 
+	/**
+	Method retreives address data from the MyMinter server
+	- SeeAlso: https://my.beta.minter.network/help/index.html
+	- Parameters:
+	- username: username to get address from
+	- email: optional, email to get address from
+	- completion: Method which will be called after request finishes
+	*/
 	public func address(username: String? = nil, email: String? = nil, completion: ((String?, User?, Error?) -> ())?) {
 		
 		let url = MinterMyURL.addressByContact.url()
@@ -79,15 +94,7 @@ public class InfoManager : BaseManager {
 				if let usr = data["user"] as? [String : Any] {
 					user = Mapper<UserMappable>().map(JSON: usr)
 				}
-				
-				
 			}
-			
 		}
 	}
-
-	
-	
-
 }
-

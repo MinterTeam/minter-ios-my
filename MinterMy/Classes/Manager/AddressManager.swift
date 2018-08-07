@@ -10,8 +10,13 @@ import MinterCore
 import ObjectMapper
 
 
+/// Address Manager
 public class MyAddressManager : BaseManager {
 	
+	/**
+	Method retreives addresses data from the Minter My server
+	- SeeAlso: https://my.beta.minter.network/help/index.html
+	*/
 	public func addresses(completion: (([Address]?, Error?) -> ())?) {
 		
 		let url = MinterMyURL.addressesEncrypted.url()

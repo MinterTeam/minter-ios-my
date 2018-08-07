@@ -10,8 +10,15 @@ import MinterCore
 import ObjectMapper
 
 
+/// Profile manager
 public class ProfileManager : BaseManager {
 	
+	/**
+	Method retreives profile info data from the MyMinter server
+	- SeeAlso: https://my.beta.minter.network/help/index.html
+	- Parameters:
+	- completion: Method which will be called after request finishes
+	*/
 	public func profile(completion: ((User?, Error?) -> ())?) {
 		
 		let url = MinterMyAPIURL.profile.url()
@@ -36,6 +43,13 @@ public class ProfileManager : BaseManager {
 
 	}
 	
+	/**
+	Method updates profile on the MyMinter server
+	- SeeAlso: https://my.beta.minter.network/help/index.html
+	- Parameters:
+	- user: user model to update info to
+	- completion: Method which will be called after request finishes
+	*/
 	public func updateProfile(user: User, completion: ((Bool?, Error?) -> ())?) {
 		
 		let url = MinterMyAPIURL.profile.url()
@@ -60,6 +74,13 @@ public class ProfileManager : BaseManager {
 		}
 	}
 	
+	/**
+	Method uploads avatar to the MyMinter server
+	- SeeAlso: https://my.beta.minter.network/help/index.html
+	- Parameters:
+	- imageBase64: base64 image
+	- completion: Method which will be called after request finishes
+	*/
 	public func uploadAvatar(imageBase64: String, completion: ((Bool?, URL?, Error?) -> ())?) {
 		
 		let url = MinterMyAPIURL.profileAvatar.url()

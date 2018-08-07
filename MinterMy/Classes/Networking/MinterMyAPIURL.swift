@@ -9,7 +9,6 @@
 import Foundation
 import MinterCore
 
-//92.53.87.98
 public let MinterMyAPIBaseURL = "https://my.beta.minter.network/api/v1/"
 
 

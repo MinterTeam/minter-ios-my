@@ -13,6 +13,13 @@ import ObjectMapper
 
 public class AuthManager : BaseManager {
 	
+	/**
+	Method checks if the username is taken
+	- SeeAlso: https://my.beta.minter.network/help/index.html
+	- Parameters:
+	- username: username should satisfy the following regexp "^[a-zA-Z0-9_]{5,16}"
+	- completion: Method which will be called after request finishes
+	*/
 	public func isTaken(username: String, completion: ((Bool?, Error?) -> ())?) {
 		let url = MinterMyAPIURL.username(username: username).url()
 		
@@ -41,6 +48,18 @@ public class AuthManager : BaseManager {
 		case custom(code: Int?, message: String?)
 	}
 	
+	/**
+	Method checks if the username is taken
+	- SeeAlso: https://my.beta.minter.network/help/index.html
+	- Parameters:
+	- username: username should satisfy the following regexp "^[a-zA-Z0-9_]{5,16}"
+	- password: password should be longer or equal 6 symbols
+	- email: optional
+	- phone: optional
+	- account: Account model
+	- encrypted: encrypted mnemonic to be saved on the MyMinter server (used to sync between wallets)
+	- completion: Method which will be called after request finishes
+	*/
 	public func register(username: String, password: String, email: String, phone: String, account: Account, encrypted: String? = "", completion: ((Bool?, AuthManagerRegisterError?) -> ())?) {
 		let url = MinterMyAPIURL.register.url()
 		
@@ -90,6 +109,14 @@ public class AuthManager : BaseManager {
 		case invalidCredentials
 	}
 	
+	/**
+	Method logs in to MyMinter
+	- SeeAlso: https://my.beta.minter.network/help/index.html
+	- Parameters:
+	- username: username should satisfy the following regexp "^[a-zA-Z0-9_]{5,16}"
+	- password: password should be longer or equal 6 symbols
+	- completion: Method which will be called after request finishes
+	*/
 	public func login(username: String, password: String, completion: ((String?, String?, User?, AuthManagerLoginError?) -> ())?) {
 		
 		let url = MinterMyAPIURL.login.url()
@@ -140,6 +167,14 @@ public class AuthManager : BaseManager {
 		}
 	}
 	
+	/**
+	Method changes password to MyMinter
+	- SeeAlso: https://my.beta.minter.network/help/index.html
+	- Parameters:
+	- newPassword: new password to be saved to MyMinter
+	- encryptedMnemonics: re-encrypted mnemonics
+	- completion: Method which will be called after request finishes
+	*/
 	public func changePassword(newPassword: String, encryptedMnemonics: [(id: Int, mnemonic: String)], completion: ((Bool?, Error?) -> ())?) {
 		
 		let url = MinterMyAPIURL.password.url()
@@ -161,7 +196,6 @@ public class AuthManager : BaseManager {
 			}
 			
 			res = true
-			
 		}
 	}
 

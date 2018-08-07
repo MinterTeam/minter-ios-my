@@ -9,16 +9,29 @@ import Foundation
 import ObjectMapper
 
 
+/// User model
 public class User {
 	
 	public init() {}
 
+	/// Identifier
 	public var id: Int?
+	
+	/// Username
 	public var username: String?
+	
+	/// Name
 	public var name: String?
+	
+	/// Email
 	public var email: String?
+	
 	public var language: String?
+	
+	/// Avatar URL String
 	public var avatar: String?
+	
+	/// Phone
 	public var phone: String?
 //	public var mainAddress: Bool?
 

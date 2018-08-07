@@ -8,6 +8,7 @@
 import Foundation
 import MinterCore
 
+
 public extension AuthManager {
 	
 	public class var `default`: AuthManager {

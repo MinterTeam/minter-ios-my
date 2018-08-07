@@ -8,7 +8,7 @@
 
 import Foundation
 
-
+/// Account model
 public struct Account {
 	
 	public enum EncryptedBy : String {
@@ -18,14 +18,18 @@ public struct Account {
 	
 	//MARK: -
 	
+	/// Encryption type
 	public var encryptedBy: EncryptedBy
 	
+	/// Minter Address
 	public var address: String
 	
+	/// Whether the address is main for this account
 	public var isMain: Bool
 	
 	public var lastBalance: [String : Double] = [:]
 	
+	/// Account id
 	public var id: Int
 	
 	//MARK: -
@@ -39,6 +43,7 @@ public struct Account {
 	
 	//MARK: -
 
+	/// Method substitutes two account instances
 	public mutating func merge(with account: Account) {
 		self.id = account.id
 		self.encryptedBy = account.encryptedBy
