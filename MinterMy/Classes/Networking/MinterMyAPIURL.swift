@@ -31,39 +31,39 @@ public enum MinterMyAPIURL {
 	
 	public func url() -> URL {
 		switch self {
-			
+		
 		//Auth
 		case .register:
 			return URL(string: MinterMyAPIBaseURL + "register")!
-			
+		
 		case .login:
 			return URL(string: MinterMyAPIBaseURL + "login")!
-			
+		
 		case .username(let username):
 			return URL(string: MinterMyAPIBaseURL + "username/" + username.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!)!
-			
+		
 		//Profile
 		case .password:
 			return URL(string: MinterMyAPIBaseURL + "profile/password")!
-			
+		
 		case .profileConfirm(let id):
 			return URL(string: MinterMyAPIBaseURL + "profile/confirm/\(id)/")!
-			
+		
 		case .profile:
 			return URL(string: MinterMyAPIBaseURL + "profile")!
-			
+		
 		case .profileAvatar:
 			return URL(string: MinterMyAPIBaseURL + "profile/avatar")!
 		
 		case .avatarAddress(let address):
 			return URL(string: MinterMyAPIBaseURL + "avatar/by/address/" + address.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!)!
-			
+		
 		case .avatarUserId(let id):
 			return URL(string: MinterMyAPIBaseURL + "avatar/by/user/" + String(id))!
-			
+		
 		case .avatarByCoin(let coin):
 			return URL(string: MinterMyAPIBaseURL + "avatar/by/coin/" + coin.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!)!
-			
+		
 		}
 	}
 }

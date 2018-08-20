@@ -10,8 +10,9 @@ import Foundation
 import MinterCore
 import ObjectMapper
 
-
+/// AuthManager
 public class AuthManager : BaseManager {
+	
 	
 	/**
 	Method checks if the username is taken
@@ -175,28 +176,112 @@ public class AuthManager : BaseManager {
 	- encryptedMnemonics: re-encrypted mnemonics
 	- completion: Method which will be called after request finishes
 	*/
-	public func changePassword(newPassword: String, encryptedMnemonics: [(id: Int, mnemonic: String)], completion: ((Bool?, Error?) -> ())?) {
+//	public func changePassword(newPassword: String, encryptedMnemonics: [(id: Int, mnemonic: String)], completion: ((Bool?, Error?) -> ())?) {
+//
+//		let url = MinterMyAPIURL.password.url()
+//
+//		self.httpClient.postRequest(url, parameters: ["newPassword" : newPassword, "addressesEncryptedData" : encryptedMnemonics.map({ (val) -> [String : Any] in
+//			return ["id" : val.id, "encrypted": val.mnemonic]
+//		})]) { (response, error) in
+//
+//			var res = false
+//			var err: Error?
+//
+//			defer {
+//				completion?(res, err)
+//			}
+//
+//			guard error == nil else {
+//				err = error
+//				return
+//			}
+//
+//			res = true
+//		}
+//	}
+	
+	/**
+	Method changes password to MyMinter
+	- SeeAlso: https://my.beta.minter.network/help/index.html
+	- Parameters:
+	- newPassword: new password to be saved to MyMinter
+	- encryptedMnemonics: re-encrypted mnemonics
+	- completion: Method which will be called after request finishes
+	*/
+	public func changePassword(oldEncryptedMnemoics: [(id: Int, mnemonic: String)], encryptionKey: Data, newPassword: String, completion: ((Bool?, Error?) -> ())?) throws {
+		
+		enum ChangePasswordError : Error {
+			case encryptionError
+			case noMnemonics
+		}
+		
+		let mnemonicHelper = MnemonicHelper()
 		
 		let url = MinterMyAPIURL.password.url()
 		
-		self.httpClient.postRequest(url, parameters: ["newPassword" : newPassword, "addressesEncryptedData" : encryptedMnemonics.map({ (val) -> [String : Any] in
-			return ["id" : val.id, "encrypted": val.mnemonic]
-		})]) { (response, error) in
+		let originalMnemonics = oldEncryptedMnemoics.map { (val) -> (id: Int, mnemonic: String)? in
 			
+			let data = Data(hex: val.mnemonic)
+			
+			let decrypted = mnemonicHelper.decryptMnemonic(encrypted: data, password: encryptionKey)
+			
+			guard decrypted != nil else {
+				return nil
+			}
+			
+			return (id: val.id, mnemonic: decrypted!)
+		}.filter { (val) -> Bool in
+			return val != nil
+		} as! [(id: Int, mnemonic: String)]
+		
+		let newEncryptionKey = newPassword.bytes.sha256()
+		
+		let newMnemonics = try? originalMnemonics.map { (val) -> (id: Int, mnemonic: String) in
+			
+			var encrypted: Data?
+			do {
+				encrypted = try mnemonicHelper.encryptedMnemonic(mnemonic: val.mnemonic, password: Data(bytes: newEncryptionKey))
+			}
+			catch {
+				throw ChangePasswordError.encryptionError
+			}
+			
+			guard encrypted != nil else {
+				throw ChangePasswordError.encryptionError
+			}
+			
+			return (id: val.id, mnemonic: encrypted!.toHexString())
+		}
+		
+		guard let encrypterMnemonicsParam = newMnemonics?.map({ (val) -> [String : Any] in
+			return ["id" : val.id, "encrypted": val.mnemonic]
+		}) else {
+			throw ChangePasswordError.noMnemonics
+		}
+		
+		self.httpClient.postRequest(url, parameters: ["newPassword" : AuthManager.authPassword(from: newPassword), "addressesEncryptedData" : encrypterMnemonicsParam]) { (response, error) in
+
 			var res = false
 			var err: Error?
-			
+
 			defer {
 				completion?(res, err)
 			}
-			
+
 			guard error == nil else {
 				err = error
 				return
 			}
-			
+
 			res = true
 		}
 	}
+	
+	/// Method generates raw MyMinter password
+	class func authPassword(from: String) -> String {
+		return from.sha256().sha256()
+	}
 
 }
+
+

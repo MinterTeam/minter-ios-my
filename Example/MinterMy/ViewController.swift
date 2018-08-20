@@ -10,14 +10,17 @@ import UIKit
 import MinterCore
 import MinterMy
 
+
 class ViewController: UIViewController {
 	
 	var manager: AuthManager?
+	
+	/// HTTP Client
+	let httpClient = APIClient.shared
+	
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
-		let httpClient = APIClient.shared
 		
 		self.manager = AuthManager(httpClient: httpClient)
 		
@@ -28,10 +31,9 @@ class ViewController: UIViewController {
 		
 	}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+	override func didReceiveMemoryWarning() {
+		super.didReceiveMemoryWarning()
+	}
 
 }
 

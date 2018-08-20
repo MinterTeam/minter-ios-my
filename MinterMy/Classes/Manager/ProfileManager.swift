@@ -105,5 +105,22 @@ public class ProfileManager : BaseManager {
 			}
 		}
 	}
+	
+	/**
+	Method removes avatar from the MyMinter server
+	- SeeAlso: https://my.beta.minter.network/help/index.html
+	- Parameters:
+	- completion: Method which will be called after request finishes
+	*/
+	public func deleteAvatar(with completion: ((Error?) -> ())?) {
+		
+		let url = MinterMyAPIURL.profileAvatar.url()
+		
+		self.httpClient.deleteRequest(url, parameters: nil) { (response, error) in
+			
+			completion?(error)
+			
+		}
+	}
 
 }
