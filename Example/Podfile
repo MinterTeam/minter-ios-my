@@ -1,4 +1,3 @@
-source 'https://github.com/MinterTeam/Minter_iOS_Specs'
 source 'https://github.com/Cocoapods/Specs'
 
 use_frameworks!
