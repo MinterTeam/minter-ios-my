@@ -12,7 +12,6 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		7EB0968638FAB03129565E23 /* Pods_MinterMy_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ABB1A032F35BBC4494EF153 /* Pods_MinterMy_Tests.framework */; };
 		D167CC38B5B11DFC03D0814F /* Pods_MinterMy_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E414A5D3E655D5066542A483 /* Pods_MinterMy_Example.framework */; };
 /* End PBXBuildFile section */
@@ -366,7 +365,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
