@@ -278,7 +278,7 @@ public class AuthManager : BaseManager {
 	}
 	
 	/// Method generates raw MyMinter password
-	class func authPassword(from: String) -> String {
+	public class func authPassword(from: String) -> String {
 		return from.sha256().sha256()
 	}
 
