@@ -1,6 +1,6 @@
 # MinterMy
 
-[![CI Status](https://img.shields.io/travis/sidorov.panda/MinterMy.svg?style=flat)](https://travis-ci.org/sidorov.panda/MinterMy)
+[![CI Status](https://img.shields.io/travis/MinterTeam/minter-ios-my.svg?style=flat)](https://travis-ci.org/MinterTeam/minter-ios-my)
 [![Version](https://img.shields.io/cocoapods/v/MinterMy.svg?style=flat)](https://cocoapods.org/pods/MinterMy)
 [![License](https://img.shields.io/cocoapods/l/MinterMy.svg?style=flat)](https://cocoapods.org/pods/MinterMy)
 [![Platform](https://img.shields.io/cocoapods/p/MinterMy.svg?style=flat)](https://cocoapods.org/pods/MinterMy)
