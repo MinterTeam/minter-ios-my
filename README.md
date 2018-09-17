@@ -1,9 +1,15 @@
-# MinterMy
+<p align="center" background="black"><img src="minter-logo.svg" width="400"></p>
+<p align="center">
+<a href="https://github.com/MinterTeam/minter-ios-my/releases/latest"><img src="https://img.shields.io/github/tag/MinterTeam/minter-ios-my.svg" alt="Version"></a>
+<a href="https://travis-ci.org/MinterTeam/minter-ios-my"><img src="http://img.shields.io/travis/MinterTeam/minter-ios-my.svg?style=flat" alt="CI Status"></a> 
+<a href="http://cocoapods.org/pods/MinterMy"><img src="https://img.shields.io/cocoapods/v/MinterMy.svg?style=flat" alt="Version"></a>
+<a href="http://cocoapods.org/pods/MinterMy"><img src="https://img.shields.io/cocoapods/p/MinterMy.svg?style=flat" alt="Platform"></a>
+<a href="https://github.com/MinterTeam/minter-ios-my/blob/master/LICENSE"><img src="https://img.shields.io/github/license/MinterTeam/minter-ios-my.svg" alt="License"></a>
+<a href="https://github.com/MinterTeam/minter-ios-my/commits/master"><img src="https://img.shields.io/github/last-commit/MinterTeam/minter-ios-my.svg" alt="Last commit"></a>
+</p>
 
-[![CI Status](https://img.shields.io/travis/MinterTeam/minter-ios-my.svg?style=flat)](https://travis-ci.org/MinterTeam/minter-ios-my)
-[![Version](https://img.shields.io/cocoapods/v/MinterMy.svg?style=flat)](https://cocoapods.org/pods/MinterMy)
-[![License](https://img.shields.io/cocoapods/l/MinterMy.svg?style=flat)](https://cocoapods.org/pods/MinterMy)
-[![Platform](https://img.shields.io/cocoapods/p/MinterMy.svg?style=flat)](https://cocoapods.org/pods/MinterMy)
+
+# MinterMy
 
 ## Example
 
