@@ -14,7 +14,14 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		7EB0968638FAB03129565E23 /* Pods_MinterMy_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ABB1A032F35BBC4494EF153 /* Pods_MinterMy_Tests.framework */; };
 		D167CC38B5B11DFC03D0814F /* Pods_MinterMy_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E414A5D3E655D5066542A483 /* Pods_MinterMy_Example.framework */; };
-		FA3114B92142938A00A17907 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		FA197B1521E73F3D00264CE6 /* MnemonicHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA197B1421E73F3D00264CE6 /* MnemonicHelperTests.swift */; };
+		FA4B2A7D21E5F25E008625D1 /* AccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B2A7C21E5F25E008625D1 /* AccountTests.swift */; };
+		FA4B2A7F21E5FA6B008625D1 /* AddressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B2A7E21E5FA6B008625D1 /* AddressTests.swift */; };
+		FA4B2A8121E60234008625D1 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B2A8021E60234008625D1 /* UserTests.swift */; };
+		FA4B2A8621E60B7F008625D1 /* AddressManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B2A8521E60B7F008625D1 /* AddressManagerTests.swift */; };
+		FA4B2A8821E610A5008625D1 /* AuthManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B2A8721E610A5008625D1 /* AuthManagerTests.swift */; };
+		FA4B2A8A21E6152C008625D1 /* ProfileManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B2A8921E6152C008625D1 /* ProfileManagerTests.swift */; };
+		FA4B2A8C21E615AF008625D1 /* InfoManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B2A8B21E615AF008625D1 /* InfoManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +46,6 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* MinterMy_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinterMy_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6D2BAD735809E0CE2360F3E5 /* Pods-MinterMy_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinterMy_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MinterMy_Tests/Pods-MinterMy_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		7F2AC36B3597BE90F674EAD6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		968ECDF9A597A03467D5CBF7 /* Pods-MinterMy_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinterMy_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MinterMy_Example/Pods-MinterMy_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -47,6 +53,14 @@
 		D103BFE18B52FB133EAEEC03 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		D7626B90E7F75310C49017A2 /* MinterMy.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MinterMy.podspec; path = ../MinterMy.podspec; sourceTree = "<group>"; };
 		E414A5D3E655D5066542A483 /* Pods_MinterMy_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MinterMy_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA197B1421E73F3D00264CE6 /* MnemonicHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemonicHelperTests.swift; sourceTree = "<group>"; };
+		FA4B2A7C21E5F25E008625D1 /* AccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTests.swift; sourceTree = "<group>"; };
+		FA4B2A7E21E5FA6B008625D1 /* AddressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTests.swift; sourceTree = "<group>"; };
+		FA4B2A8021E60234008625D1 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
+		FA4B2A8521E60B7F008625D1 /* AddressManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressManagerTests.swift; sourceTree = "<group>"; };
+		FA4B2A8721E610A5008625D1 /* AuthManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManagerTests.swift; sourceTree = "<group>"; };
+		FA4B2A8921E6152C008625D1 /* ProfileManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManagerTests.swift; sourceTree = "<group>"; };
+		FA4B2A8B21E615AF008625D1 /* InfoManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +140,9 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				FA197B1321E73F2700264CE6 /* Helper */,
+				FA4B2A8421E604D9008625D1 /* Model */,
+				FA4B2A8321E604CE008625D1 /* Manager */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -157,6 +173,35 @@
 				3ABB1A032F35BBC4494EF153 /* Pods_MinterMy_Tests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA197B1321E73F2700264CE6 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				FA197B1421E73F3D00264CE6 /* MnemonicHelperTests.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		FA4B2A8321E604CE008625D1 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				FA4B2A8521E60B7F008625D1 /* AddressManagerTests.swift */,
+				FA4B2A8721E610A5008625D1 /* AuthManagerTests.swift */,
+				FA4B2A8921E6152C008625D1 /* ProfileManagerTests.swift */,
+				FA4B2A8B21E615AF008625D1 /* InfoManagerTests.swift */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
+		FA4B2A8421E604D9008625D1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA4B2A7C21E5F25E008625D1 /* AccountTests.swift */,
+				FA4B2A7E21E5FA6B008625D1 /* AddressTests.swift */,
+				FA4B2A8021E60234008625D1 /* UserTests.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,10 +258,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = A26H28FPZU;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = A26H28FPZU;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -269,11 +316,27 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MinterMy_Tests/Pods-MinterMy_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BigInt/BigInt.framework",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/MinterCore/MinterCore.framework",
+				"${BUILT_PRODUCTS_DIR}/MinterMy/MinterMy.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/SipHash/SipHash.framework",
+				"${BUILT_PRODUCTS_DIR}/secp256k1.swift/secp256k1.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BigInt.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MinterCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MinterMy.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SipHash.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/secp256k1.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 			);
@@ -366,7 +429,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA3114B92142938A00A17907 /* Tests.swift in Sources */,
+				FA4B2A8621E60B7F008625D1 /* AddressManagerTests.swift in Sources */,
+				FA4B2A8A21E6152C008625D1 /* ProfileManagerTests.swift in Sources */,
+				FA4B2A8121E60234008625D1 /* UserTests.swift in Sources */,
+				FA4B2A8C21E615AF008625D1 /* InfoManagerTests.swift in Sources */,
+				FA4B2A7D21E5F25E008625D1 /* AccountTests.swift in Sources */,
+				FA197B1521E73F3D00264CE6 /* MnemonicHelperTests.swift in Sources */,
+				FA4B2A8821E610A5008625D1 /* AuthManagerTests.swift in Sources */,
+				FA4B2A7F21E5FA6B008625D1 /* AddressTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +574,7 @@
 			baseConfigurationReference = 47E90234DEC4984470E4F5C6 /* Pods-MinterMy_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = A26H28FPZU;
 				INFOPLIST_FILE = MinterMy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -519,6 +590,7 @@
 			baseConfigurationReference = 968ECDF9A597A03467D5CBF7 /* Pods-MinterMy_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = A26H28FPZU;
 				INFOPLIST_FILE = MinterMy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -533,6 +605,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6D2BAD735809E0CE2360F3E5 /* Pods-MinterMy_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = A26H28FPZU;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -547,6 +620,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MinterMy_Example.app/MinterMy_Example";
 			};
 			name = Debug;
 		};
@@ -554,6 +628,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A7469EE760D4B68CEDBC3174 /* Pods-MinterMy_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = A26H28FPZU;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -564,6 +639,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MinterMy_Example.app/MinterMy_Example";
 			};
 			name = Release;
 		};

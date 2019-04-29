@@ -9,6 +9,18 @@ import Foundation
 import MinterCore
 import ObjectMapper
 
+public struct ProfileManagerError : Error {
+	
+	public var code: Int?
+	public var message: String?
+	
+	public init(code: Int?, message: String?) {
+		self.code = code
+		self.message = message
+	}
+	
+}
+
 
 /// Profile manager
 public class ProfileManager : BaseManager {
@@ -66,6 +78,11 @@ public class ProfileManager : BaseManager {
 			}
 			
 			guard nil == error else {
+				
+				if let apiError = error as? HTTPClientError {
+					
+				}
+				
 				err = error
 				return
 			}

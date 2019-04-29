@@ -61,7 +61,7 @@ public class AuthManager : BaseManager {
 	- encrypted: encrypted mnemonic to be saved on the MyMinter server (used to sync between wallets)
 	- completion: Method which will be called after request finishes
 	*/
-	public func register(username: String, password: String, email: String, phone: String, account: Account, encrypted: String? = "", completion: ((Bool?, AuthManagerRegisterError?) -> ())?) {
+	public func register(username: String, password: String, email: String = "", phone: String = "", account: Account, encrypted: String? = "", completion: ((Bool?, AuthManagerRegisterError?) -> ())?) {
 		let url = MinterMyAPIURL.register.url()
 		
 		let mainAddress : [String : Any] = ["address" : "Mx" + account.address, "isMain" : true, "isServerSecured" : true, "encrypted" : encrypted ?? ""]
@@ -86,7 +86,7 @@ public class AuthManager : BaseManager {
 			
 			guard nil == error else {
 				
-				if let error = error as? APIClient.APIClientResponseError {
+				if let error = error as? HTTPClientError {
 					var code = -1
 					if let aCode = error.userData?["code"] as? Int {
 						code = aCode
@@ -139,7 +139,7 @@ public class AuthManager : BaseManager {
 				let userPayload = data["user"] as? [String : Any] else {
 					
 					//TODO: change after server fix
-					if let error = error as? APIClient.APIClientResponseError {
+					if let error = error as? HTTPClientError {
 						var code = -1
 						if let aCode = error.userData?["code"] as? Int {
 							code = aCode
@@ -167,38 +167,6 @@ public class AuthManager : BaseManager {
 			
 		}
 	}
-	
-	/**
-	Method changes password to MyMinter
-	- SeeAlso: https://my.beta.minter.network/help/index.html
-	- Parameters:
-	- newPassword: new password to be saved to MyMinter
-	- encryptedMnemonics: re-encrypted mnemonics
-	- completion: Method which will be called after request finishes
-	*/
-//	public func changePassword(newPassword: String, encryptedMnemonics: [(id: Int, mnemonic: String)], completion: ((Bool?, Error?) -> ())?) {
-//
-//		let url = MinterMyAPIURL.password.url()
-//
-//		self.httpClient.postRequest(url, parameters: ["newPassword" : newPassword, "addressesEncryptedData" : encryptedMnemonics.map({ (val) -> [String : Any] in
-//			return ["id" : val.id, "encrypted": val.mnemonic]
-//		})]) { (response, error) in
-//
-//			var res = false
-//			var err: Error?
-//
-//			defer {
-//				completion?(res, err)
-//			}
-//
-//			guard error == nil else {
-//				err = error
-//				return
-//			}
-//
-//			res = true
-//		}
-//	}
 	
 	/**
 	Method changes password to MyMinter
@@ -283,5 +251,3 @@ public class AuthManager : BaseManager {
 	}
 
 }
-
-

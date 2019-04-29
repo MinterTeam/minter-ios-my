@@ -58,9 +58,4 @@ extension Account : Equatable {
 	public static func == (lhs: Account, rhs: Account) -> Bool {
 		return lhs.id == rhs.id && lhs.address == rhs.address && lhs.encryptedBy.rawValue == rhs.encryptedBy.rawValue && lhs.isMain == rhs.isMain
 	}
-	
 }
-
-
-
-

@@ -40,28 +40,4 @@ public class MyAddressManager : BaseManager {
 			}
 		}
 	}
-
-//	public func address(address: String, completion: (([String : Any], Error?) -> ())?) {
-//
-//		let url = MinterMyURL.addressesEncrypted.url()
-//
-//		self.httpClient.getRequest(url, parameters: nil) { (response, error) in
-//
-//			var res = [String : Any]()
-//			var err: Error?
-//
-//			defer {
-//				completion?(res, err)
-//			}
-//
-//			guard nil == error else {
-//				err = error
-//				return
-//			}
-//
-//
-//		}
-//	}
-
 }
-

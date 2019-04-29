@@ -3,13 +3,24 @@ source 'https://github.com/Cocoapods/Specs'
 use_frameworks!
 
 target 'MinterMy_Example' do
-  pod 'MinterMy'
+  pod 'MinterMy', :path => '../'
 	pod 'MinterCore'
 
   target 'MinterMy_Tests' do
     inherit! :search_paths
-
+		
+		pod 'MinterMy', :path => '../'
     pod 'Quick', '~> 1.2.0'
     pod 'Nimble', '~> 7.0.2'
   end
+end
+
+post_install do |installer|
+	installer.pods_project.targets.each do |target|
+		if ['Nimble'].include? target.name
+			target.build_configurations.each do |config|
+				config.build_settings['SWIFT_VERSION'] = '3.2'
+			end
+		end
+	end
 end
