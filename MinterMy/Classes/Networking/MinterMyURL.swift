@@ -8,11 +8,14 @@
 
 import Foundation
 
-
-let MinterMyBaseURL = "https://my.beta.minter.network/api/v1/"
-
+public let MinterMyTestnetBaseURL = "https://my.beta.minter.network/api/v1/"
+public let MinterMyBaseURL = "https://my.apps.minter.network/api/v1/"
 
 enum MinterMyURL {
+	
+	var baseURL: String {
+		return MinterMySDK.shared.network == .testnet ? MinterMyTestnetBaseURL : MinterMyBaseURL
+	}
 	
 	case addressesEncrypted
 	case addressEncrypted(address: String)
@@ -23,16 +26,16 @@ enum MinterMyURL {
 		
 		switch self {
 		case .addressByContact:
-			return URL(string: MinterMyBaseURL + "info/address/by/contact")!
+			return URL(string: baseURL + "info/address/by/contact")!
 			
 		case .addressesEncrypted:
-			return URL(string: MinterMyBaseURL + "addresses/encrypted")!
+			return URL(string: baseURL + "addresses/encrypted")!
 		
 		case .addressEncrypted(let address):
-			return URL(string: MinterMyBaseURL + "addresses/" + address.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)! + "/encrypted")!
+			return URL(string: baseURL + "addresses/" + address.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)! + "/encrypted")!
 			
 		case .infoByAddresses:
-			return URL(string: MinterMyBaseURL + "info/by/addresses")!
+			return URL(string: baseURL + "info/by/addresses")!
 		
 		}
 	}
