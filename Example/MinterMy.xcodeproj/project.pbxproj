@@ -315,7 +315,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MinterMy_Tests/Pods-MinterMy_Tests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-MinterMy_Tests/Pods-MinterMy_Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BigInt/BigInt.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
@@ -342,7 +342,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MinterMy_Tests/Pods-MinterMy_Tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MinterMy_Tests/Pods-MinterMy_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5837E19454076F9F2AA198B6 /* [CP] Embed Pods Frameworks */ = {
@@ -351,7 +351,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MinterMy_Example/Pods-MinterMy_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-MinterMy_Example/Pods-MinterMy_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BigInt/BigInt.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
@@ -374,7 +374,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MinterMy_Example/Pods-MinterMy_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MinterMy_Example/Pods-MinterMy_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9F1DD24E089CA8C88D363388 /* [CP] Check Pods Manifest.lock */ = {
