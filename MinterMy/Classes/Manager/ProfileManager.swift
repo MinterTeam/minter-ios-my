@@ -10,21 +10,19 @@ import MinterCore
 import ObjectMapper
 
 public struct ProfileManagerError : Error {
-	
+
 	public var code: Int?
 	public var message: String?
-	
+
 	public init(code: Int?, message: String?) {
 		self.code = code
 		self.message = message
 	}
-	
 }
-
 
 /// Profile manager
 public class ProfileManager : BaseManager {
-	
+
 	/**
 	Method retreives profile info data from the MyMinter server
 	- SeeAlso: https://my.beta.minter.network/help/index.html
